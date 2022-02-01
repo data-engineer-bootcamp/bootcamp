@@ -1,0 +1,29 @@
+# посмотреть все запущенные контейнеры
+docker ps
+
+# все контейнеры, даже остановленные
+docker ps -a
+
+# все id контейнеров
+docker ps -aq
+
+# остановить контейнер
+docker stop {id контейнера}
+
+# остановать все запущенные контейнеры
+docker stop $(docker ps -aq)
+
+# зайти внутрь контейнера
+docker exec -it {id контейнера} bash
+
+# удалить контейнер
+docker rm -f {id контейнера}
+
+# удалить все контейнеры
+docker rm -f $(docker ps -aq)
+
+# запустить контейнеры через docker compose (выполняется в папку с файлом docker-compose.yml)
+docker compose up
+
+# остановить контейнеры, запущенные через docker compose
+docker compose down
